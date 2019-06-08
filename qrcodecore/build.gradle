@@ -9,7 +9,9 @@ android {
     }
 }
 
-// ./gradlew :qrcodecore:clean :qrcodecore:build :qrcodecore:bintrayUpload -PpublishAar
-if (hasProperty("publishAar")) {
-    apply from: 'https://raw.githubusercontent.com/bingoogolapple/PublishAar/master/jcenter-release.gradle'
+// ./gradlew :qrcodecore:clean :qrcodecore:build :qrcodecore:bintrayUpload -PpublishJcenter
+println("aaron before")
+if (hasProperty("publishJcenter")) {
+    println("aaron publishJcenter")
+    apply from: 'https://raw.githubusercontent.com/snailflying/bintray-release/master/jcenter_publish.gradle'
 }

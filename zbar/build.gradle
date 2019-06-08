@@ -33,16 +33,16 @@ android {
 }
 
 dependencies {
-    if (hasProperty("publishAar")) {
-        compile "cn.bingoogolapple:bga-qrcode-core:${VERSION_NAME}"
+    if (hasProperty("publishJcenter")) {
+        api "cn.bingoogolapple:bga-qrcode-core:${VERSION_NAME}"
     } else {
         api project(':qrcodecore')
     }
 }
 
-// ./gradlew :zbar:clean :zbar:build :zbar:bintrayUpload -PpublishAar
-if (hasProperty("publishAar")) {
-    apply from: 'https://raw.githubusercontent.com/bingoogolapple/PublishAar/master/jcenter-release.gradle'
+// ./gradlew :zbar:clean :zbar:build :zbar:bintrayUpload -PpublishJcenter
+if (hasProperty("publishJcenter")) {
+    apply from: 'https://raw.githubusercontent.com/snailflying/bintray-release/master/jcenter_publish.gradle'
 }
 
 tasks.whenTaskAdded {
